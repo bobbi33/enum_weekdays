@@ -1,0 +1,25 @@
+#include "stdafx.h"
+#include <stdio.h>
+
+enum days {Monday , Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
+
+typedef enum days DAY;
+
+const char * const thedays[] = {"monday","tuesday","wednesday","thursday","friday","saturday","sunday"};
+
+int main(){	
+	int  today = 0;
+	int tomorrow = 0;
+	int yesterday = 0;
+
+
+	for(today = Monday; today <= Sunday; today++){
+		tomorrow = (today + 6)%7;
+		yesterday  = (today + 1)%7;
+
+		printf("today is %s = %d\n",thedays[today],today);
+		printf("tormorrow is %s = %d\n",thedays[tomorrow],tomorrow);
+		printf("yesterday is %s = %d\n",thedays[yesterday],yesterday);
+	}
+	return 0;
+}
